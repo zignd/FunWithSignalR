@@ -1,0 +1,63 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Chat</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <style type="text/css">
+        .user {
+            border: 1px solid #337ab7;
+            text-align: center;
+            border-radius: 3px;
+            padding: 4px;
+        }
+
+        .user.current {
+            color: white;
+            background-color: #337ab7;
+        }
+    </style>
+
+    <div class="container" style="padding: 2em;">
+        <div class="row" style="height: 90vh;">
+            <div class="col-sm-8" style="height: inherit;">
+                <div style="display: flex; flex-direction: column; justify-content: space-between; height: inherit;">
+                    <div class="panel panel-default" style="flex-grow: 1; overflow-y: auto; height: 0px;">
+                        <div class="panel-body" id="chat">
+                        </div>
+                    </div>
+                    <div class="panel panel-default" style="display: flex; padding: 1em; margin-bottom: 0px;">
+                        <input class="form-control" id="message" type="text" />
+                        <button class="btn btn-primary" id="send" style="margin-left: 1em;"><span class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4" style="height: inherit;">
+                <div style="display: flex; flex-direction: column; justify-content: space-between; height: inherit;">
+                    <div class="panel panel-default" style="background-color: #337ab7; display: flex; justify-content: center; padding: .5em;">
+                        <div style="align-self: center; color: white;">Users Online</div>
+                    </div>
+                    <div class="panel panel-default" style="flex-grow: 1; overflow-y: auto; height: 0px; margin-bottom: 0px;">
+                        <div class="panel-body" id="users">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script src="~/Scripts/app.js"></script>
+</body>
+</html>
